@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="CodeBriel Movies — Discover movies, explore genres and find something worth watching."
+    >
+
+    <title>CodeBriel Movies | Discover Your Next Movie</title>
+
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Main Stylesheet -->
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- Lucide Icons -->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER / NAVIGATION
+         ========================================= -->
+
+    <header class="site-header">
+
+        <nav class="navbar">
+
+
+            <!-- Brand -->
+
+            <a href="#" class="logo">
+
+                <span class="logo-mark">
+
+                    <i data-lucide="play"></i>
+
+                </span>
+
+                <span>
+
+                    CodeBriel
+
+                    <strong>Movies</strong>
+
+                </span>
+
+            </a>
+
+
+
+            <!-- Navigation -->
+
+            <div class="nav-links">
+
+                <a href="#home" class="nav-link active">
+
+                    <i data-lucide="house"></i>
+
+                    Home
+
+                </a>
+
+
+                <a href="#movies" class="nav-link">
+
+                    <i data-lucide="film"></i>
+
+                    Movies
+
+                </a>
+
+
+                <a href="#genres" class="nav-link">
+
+                    <i data-lucide="layers"></i>
+
+                    Genres
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Navigation Actions -->
+
+            <div class="nav-actions">
+
+
+                <button
+                    class="icon-btn"
+                    id="search-toggle"
+                    aria-label="Search movies"
+                    title="Search"
+                >
+
+                    <i data-lucide="search"></i>
+
+                </button>
+
+
+                <button
+                    class="icon-btn"
+                    id="favorites-btn"
+                    aria-label="Favorites"
+                    title="Favorites"
+                >
+
+                    <i data-lucide="heart"></i>
+
+                </button>
+
+
+                <button
+                    class="menu-btn"
+                    id="menu-btn"
+                    aria-label="Open menu"
+                    title="Menu"
+                >
+
+                    <i data-lucide="menu"></i>
+
+                </button>
+
+
+            </div>
+
+
+        </nav>
+
+
+        <!-- Search Panel -->
+
+        <div class="search-panel" id="search-panel">
+
+            <div class="search-box">
+
+                <i data-lucide="search"></i>
+
+                <input
+                    type="search"
+                    id="search-input"
+                    placeholder="Search for a movie..."
+                    autocomplete="off"
+                >
+
+                <button
+                    id="close-search"
+                    class="search-close"
+                    aria-label="Close search"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+         ========================================= -->
+
+    <main id="home">
+
+
+        <!-- =====================================
+             HERO SECTION
+             ===================================== -->
+
+        <section class="hero">
+
+
+            <div class="hero-content">
+
+
+                <span class="eyebrow">
+
+                    <i data-lucide="sparkles"></i>
+
+                    CODEBRIEL MOVIES
+
+                </span>
+
+
+                <h1>
+
+                    Discover your next
+
+                    <span>great movie.</span>
+
+                </h1>
+
+
+                <p>
+
+                    Explore movies worth watching, discover new
+                    favourites and find stories that stay with you.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <a href="#movies" class="primary-btn">
+
+                        <i data-lucide="compass"></i>
+
+                        Explore Movies
+
+                    </a>
+
+
+                    <button class="secondary-btn" id="random-movie-btn">
+
+                        <i data-lucide="shuffle"></i>
+
+                        Surprise Me
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- Hero visual -->
+
+            <div class="hero-visual">
+
+                <div class="hero-poster poster-one" id="hero-poster-one">
+
+                    <div class="poster-placeholder">
+
+                        <i data-lucide="film"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-poster poster-two" id="hero-poster-two">
+
+                    <div class="poster-placeholder">
+
+                        <i data-lucide="clapperboard"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-poster poster-three" id="hero-poster-three">
+
+                    <div class="poster-placeholder">
+
+                        <i data-lucide="play"></i>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             FEATURED MOVIES
+             ===================================== -->
+
+        <section class="content-section" id="movies">
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <span class="section-label">
+
+                        CURATED FOR YOU
+
+                    </span>
+
+                    <h2>Featured Movies</h2>
+
+                </div>
+
+
+                <a href="#all-movies" class="view-all">
+
+                    View all
+
+                    <i data-lucide="arrow-right"></i>
+
+                </a>
+
+
+            </div>
+
+
+            <div
+                class="movie-grid"
+                id="featured-movies"
+            >
+
+                <!-- JavaScript will insert movie cards here -->
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             GENRES
+             ===================================== -->
+
+        <section class="content-section genres-section" id="genres">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+
+                        EXPLORE
+
+                    </span>
+
+                    <h2>Browse by Genre</h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="genre-grid">
+
+
+                <button class="genre-card" data-genre="horror">
+
+                    <span class="genre-icon">
+
+                        <i data-lucide="ghost"></i>
+
+                    </span>
+
+                    <span>Horror</span>
+
+                    <i data-lucide="arrow-up-right"></i>
+
+                </button>
+
+
+                <button class="genre-card" data-genre="action">
+
+                    <span class="genre-icon">
+
+                        <i data-lucide="zap"></i>
+
+                    </span>
+
+                    <span>Action</span>
+
+                    <i data-lucide="arrow-up-right"></i>
+
+                </button>
+
+
+                <button class="genre-card" data-genre="k-drama">
+
+                    <span class="genre-icon">
+
+                        <i data-lucide="heart"></i>
+
+                    </span>
+
+                    <span>K-Drama</span>
+
+                    <i data-lucide="arrow-up-right"></i>
+
+                </button>
+
+
+                <button class="genre-card" data-genre="chinese">
+
+                    <span class="genre-icon">
+
+                        <i data-lucide="globe"></i>
+
+                    </span>
+
+                    <span>Chinese</span>
+
+                    <i data-lucide="arrow-up-right"></i>
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             MOVIE LIBRARY
+             ===================================== -->
+
+        <section
+            class="content-section"
+            id="all-movies"
+        >
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <span class="section-label">
+
+                        MOVIE LIBRARY
+
+                    </span>
+
+                    <h2>Popular Right Now</h2>
+
+                </div>
+
+
+                <div class="filter-controls">
+
+
+                    <button
+                        class="filter-btn active"
+                        data-filter="all"
+                    >
+
+                        All
+
+                    </button>
+
+
+                    <button
+                        class="filter-btn"
+                        data-filter="action"
+                    >
+
+                        Action
+
+                    </button>
+
+
+                    <button
+                        class="filter-btn"
+                        data-filter="horror"
+                    >
+
+                        Horror
+
+                    </button>
+
+
+                    <button
+                        class="filter-btn"
+                        data-filter="drama"
+                    >
+
+                        Drama
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+            <div
+                class="movie-grid"
+                id="movie-grid"
+            >
+
+                <!-- JavaScript will load movies here -->
+
+            </div>
+
+
+            <!-- Loading State -->
+
+            <div
+                class="loading-state"
+                id="loading-state"
+            >
+
+                <div class="spinner"></div>
+
+                <p>Discovering movies...</p>
+
+            </div>
+
+
+            <!-- Empty State -->
+
+            <div
+                class="empty-state hidden"
+                id="empty-state"
+            >
+
+                <i data-lucide="film"></i>
+
+                <h3>No movies found</h3>
+
+                <p>
+                    Try another search or explore a different genre.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             MOVIE DETAILS MODAL
+             ===================================== -->
+
+        <div
+            class="modal hidden"
+            id="movie-modal"
+        >
+
+
+            <div class="modal-overlay" id="modal-overlay"></div>
+
+
+            <div class="movie-modal-content">
+
+
+                <button
+                    class="modal-close"
+                    id="modal-close"
+                    aria-label="Close movie details"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+
+                <div
+                    class="modal-backdrop"
+                    id="modal-backdrop"
+                >
+
+                </div>
+
+
+                <div class="modal-details">
+
+
+                    <div class="modal-poster">
+
+                        <img
+                            id="modal-poster-image"
+                            src=""
+                            alt=""
+                        >
+
+                    </div>
+
+
+                    <div class="modal-info">
+
+
+                        <span
+                            class="modal-genre"
+                            id="modal-genre"
+                        >
+                            Movie
+                        </span>
+
+
+                        <h2 id="modal-title">
+                            Movie Title
+                        </h2>
+
+
+                        <div class="movie-meta">
+
+
+                            <span>
+
+                                <i data-lucide="calendar"></i>
+
+                                <span id="modal-year">
+                                    2026
+                                </span>
+
+                            </span>
+
+
+                            <span>
+
+                                <i data-lucide="star"></i>
+
+                                <span id="modal-rating">
+                                    0.0
+                                </span>
+
+                            </span>
+
+
+                        </div>
+
+
+                        <p id="modal-overview">
+
+                            Movie description will appear here.
+
+                        </p>
+
+
+                        <div class="modal-actions">
+
+                            <a
+                               class="primary-btn"
+                               id="modal-watch"
+                               href="#"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                            >
+
+                               <i data-lucide="play"></i>
+
+                               Watch Options
+
+                            </a>
+
+                            <button
+                                class="primary-btn"
+                                id="modal-favorite"
+                            >
+
+                                <i data-lucide="heart"></i>
+
+                                Add to Favorites
+
+                            </button>
+
+
+                            <button
+                                class="secondary-btn"
+                                id="modal-close-btn"
+                            >
+
+                                Close
+
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+    <!-- =========================================
+         View Favourites
+         ========================================= -->
+
+<section
+    class="content-section hidden"
+    id="favorites-section"
+>
+
+    <div class="section-header">
+
+        <div>
+
+            <span class="section-label">
+                YOUR COLLECTION
+            </span>
+
+            <h2>My Favorites</h2>
+
+        </div>
+
+        <button
+            class="secondary-btn"
+            id="back-to-movies"
+        >
+
+            <i data-lucide="arrow-left"></i>
+
+            Back to Movies
+
+        </button>
+
+    </div>
+
+
+    <div
+        class="movie-grid"
+        id="favorites-grid"
+    >
+
+    </div>
+
+
+    <div
+        class="empty-state hidden"
+        id="favorites-empty"
+    >
+
+        <i data-lucide="heart"></i>
+
+        <h3>No favorites yet</h3>
+
+        <p>
+            Add movies to your favorites and
+            they'll appear here.
+        </p>
+
+    </div>
+
+</section>
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+
+    <footer class="site-footer">
+
+
+        <div class="footer-content">
+
+
+            <div class="footer-brand">
+
+
+                <a href="#" class="logo">
+
+                    <span class="logo-mark">
+
+                        <i data-lucide="play"></i>
+
+                    </span>
+
+                    <span>
+
+                        CodeBriel
+
+                        <strong>Movies</strong>
+
+                    </span>
+
+                </a>
+
+
+                <p>
+
+                    Discover. Explore. Enjoy.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="footer-links">
+
+
+                <a href="#home">Home</a>
+
+                <a href="#movies">Movies</a>
+
+                <a href="#genres">Genres</a>
+
+                <a href="#favorites">Favorites</a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+
+            <p>
+
+                © 2026 CodeBriel Movies.
+                Built with HTML, CSS & JavaScript.
+
+            </p>
+
+
+           <p>
+
+               Movie data provided by
+               <a
+                   href="https://www.themoviedb.org/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                >
+                 TMDB
+               </a>.
+           
+            </p>
+
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- =========================================
+         LUCIDE INITIALIZATION
+         ========================================= -->
+
+    <script>
+
+        lucide.createIcons();
+
+    </script>
+
+
+    <!-- Main JavaScript -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
